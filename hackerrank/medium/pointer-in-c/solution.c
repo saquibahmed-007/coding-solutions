@@ -1,17 +1,27 @@
 #include <stdio.h>
 
+void update(int *a, int *b) {
+    int sum = *a + *b;
+    int difference = *a - *b;
+
+    if (difference < 0) {
+        difference = -difference;
+    }
+
+    *a = sum;
+    *b = difference;
+}
+
 int main() {
-    char ch;
-    char s[100];
-    char sentence[100];
+    int a, b;
 
-    scanf("%c", &ch);
-    scanf("%s", s);
-    scanf("\n%[^\n]", sentence);
+    scanf("%d", &a);
+    scanf("%d", &b);
 
-    printf("%c\n", ch);
-    printf("%s\n", s);
-    printf("%s\n", sentence);
+    update(&a, &b);
+
+    printf("%d\n", a);
+    printf("%d\n", b);
 
     return 0;
 }
